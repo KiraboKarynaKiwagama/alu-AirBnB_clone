@@ -1,0 +1,13 @@
+/* Not fixed: a fixed footer can hide focused elements and overflows when zoomed */
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid #CCCCCC;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}

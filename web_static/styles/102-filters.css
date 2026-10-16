@@ -1,0 +1,128 @@
+.filters {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  margin: 30px 0;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+}
+
+.filters > div {
+  position: relative;
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  padding: 15px 0 0 30px;
+  border-right: 1px solid #DDDDDD;
+}
+
+.filters h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.filters h4 {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.filters button {
+  align-self: center;
+  width: 20%;
+  height: 48px;
+  margin-left: auto;
+  margin-right: 30px;
+  background-color: #FF5A5F;
+  color: #FFFFFF;
+  font-size: 18px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  opacity: 0.9;
+}
+
+/* Popover: hidden by default, shown when hovering the filter div */
+.popover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  background-color: #FAFAFA;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+}
+
+.filters > div:hover .popover {
+  display: block;
+}
+
+.popover li {
+  padding: 4px 0 4px 30px;
+  list-style: none;
+}
+
+.popover ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.popover h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Tablet: tighter spacing, wider button */
+@media (max-width: 900px) {
+  .filters > div {
+    width: 30%;
+    padding-left: 20px;
+  }
+
+  .filters button {
+    width: 25%;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .popover li {
+    padding-left: 20px;
+  }
+}
+
+/* Mobile: stack the filters and make the button full width */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    height: auto;
+    margin: 15px 0;
+  }
+
+  .filters > div {
+    width: 100%;
+    height: 70px;
+    border-right: 0;
+    border-bottom: 1px solid #DDDDDD;
+  }
+
+  .filters button {
+    align-self: stretch;
+    width: auto;
+    margin: 15px 20px;
+  }
+}

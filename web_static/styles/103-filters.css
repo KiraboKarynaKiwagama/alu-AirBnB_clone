@@ -1,0 +1,137 @@
+.filters {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 70px;
+  margin: 30px 0;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+}
+
+.filters > div {
+  position: relative;
+  box-sizing: border-box;
+  width: 25%;
+  padding: 12px 0 12px 30px;
+  border-right: 1px solid #DDDDDD;
+}
+
+.filters h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.filters > div > p {
+  margin: 2px 0 0;
+  font-size: 0.875rem;
+}
+
+/* Contrast: white on #D32F37 is about 5:1 */
+.filters button {
+  align-self: center;
+  width: 20%;
+  min-height: 48px;
+  margin-left: auto;
+  margin-right: 30px;
+  background-color: #D32F37;
+  color: #FFFFFF;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #B8262D;
+}
+
+/* Popover: hidden by default, shown on hover AND on keyboard focus */
+.popover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  background-color: #FAFAFA;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+}
+
+.filters > div:hover .popover,
+.filters > div:focus-within .popover {
+  display: block;
+}
+
+.popover li {
+  padding: 4px 0 4px 30px;
+  list-style: none;
+}
+
+.popover ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.popover h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.popover label {
+  display: block;
+  cursor: pointer;
+}
+
+.popover input {
+  margin: 0 8px 0 0;
+  accent-color: #D32F37;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .filters > div {
+    width: 30%;
+    padding-left: 20px;
+  }
+
+  .filters button {
+    width: 25%;
+    margin-right: 20px;
+    font-size: 1rem;
+  }
+
+  .popover li {
+    padding-left: 20px;
+  }
+}
+
+/* Mobile: stacked filters, full-width button */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .filters > div {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid #DDDDDD;
+  }
+
+  .filters button {
+    align-self: stretch;
+    width: auto;
+    margin: 15px 20px;
+  }
+}
